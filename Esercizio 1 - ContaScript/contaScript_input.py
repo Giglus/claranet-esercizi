@@ -16,5 +16,5 @@ def contaScript(directory):
     for interpreter, count in interpreter_count.items():
         print(f"{count} {interpreter}")
 
-user_directory = input("Inserisci la directory da scannerizzare: ")
+user_directory = input("Inserisci il PATH di una directory: ")
 contaScript(user_directory)
