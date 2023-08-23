@@ -20,8 +20,8 @@ Esempio di output:
 `import os
 from collections import defaultdict`
 
-La prima riga importa il modulo “os” che fornisce funzionalità per l'interazione con il sistema operativo, in questo caso la navigazione delle directory e la gestione dei file.
-Nella seconda riga viene importata la classe defaultdict dal modulo collections. Con defaultdict si intende una sottoclasse di dizionario che restituisce un valore predefinito quando si cerca di accedere a una chiave inesistente.
+- La prima riga importa il modulo “os” che fornisce funzionalità per l'interazione con il sistema operativo, in questo caso la navigazione delle directory e la gestione dei file.
+- Nella seconda riga viene importata la classe defaultdict dal modulo collections. Con defaultdict si intende una sottoclasse di dizionario che restituisce un valore predefinito quando si cerca di accedere a una chiave inesistente.
 
 `def contaScript(directory):
     interpreter_count = defaultdict(int)`
@@ -38,17 +38,17 @@ Dentro la funzione, `interpreter_count = defaultdict(int)`, viene creato un ogge
                     if first_line.startswith("#!"):
                         interpreter_count[first_line] += 1
 
-La prima riga include un ciclo for che utilizza la funzione `os.walk()` per iterare attraverso tutti i file e le directory presenti nella directory specificata e nelle sue sotto-directory.
-Nella seconda riga, nel primo ciclo for si scorre attraverso i file nella directory corrente.
-Nella terza riga si verifica se il nome del file termina con ".sh", il che indica che potrebbe trattarsi di uno script shell.
-Nella quarta riga viene creato il percorso completo al file combinando (effettuando un “join”) la directory radice root con il nome del file filename.
-Nella quinta riga è presente una struttura with che apre il file specificato in modalità di lettura ("r"), garantendo che il file verrà chiuso correttamente alla fine dell'uso.
-Nella sesta riga viene letta la prima riga del file e viene rimossa qualsiasi spazio bianco iniziale o finale con il metodo strip(). Questa riga rappresenta la presunta linea shabang.
-Nella settima riga viene impostata una condizione che verifica se la prima riga inizia con #!, che è un indicatore di una linea shabang.
-Nell’ottava riga, se la riga shabang è stata trovata, il conteggio dell'interprete corrispondente viene incrementato di uno all'interno del dizionario interpreter_count.
+- La prima riga include un ciclo for che utilizza la funzione `os.walk()` per iterare attraverso tutti i file e le directory presenti nella directory specificata e nelle sue sotto-directory.
+- Nella seconda riga, nel primo ciclo for si scorre attraverso i file nella directory corrente.
+- Nella terza riga si verifica se il nome del file termina con ".sh", il che indica che potrebbe trattarsi di uno script shell.
+- Nella quarta riga viene creato il percorso completo al file combinando (effettuando un “join”) la directory radice root con il nome del file filename.
+- Nella quinta riga è presente una struttura with che apre il file specificato in modalità di lettura ("r"), garantendo che il file verrà chiuso correttamente alla fine dell'uso.
+- Nella sesta riga viene letta la prima riga del file e viene rimossa qualsiasi spazio bianco iniziale o finale con il metodo strip(). Questa riga rappresenta la presunta linea shabang.
+- Nella settima riga viene impostata una condizione che verifica se la prima riga inizia con #!, che è un indicatore di una linea shabang.
+- Nell’ottava riga, se la riga shabang è stata trovata, il conteggio dell'interprete corrispondente viene incrementato di uno all'interno del dizionario interpreter_count.
 
-    for interpreter, count in interpreter_count.items():
-        print(f"{count} {interpreter}")
+    `for interpreter, count in interpreter_count.items():
+        print(f"{count} {interpreter}")`
 
 Nella prima riga, dopo aver attraversato tutti i file e le directory, il ciclo successivo for scorre attraverso tutte le coppie chiave-valore nel dizionario interpreter_count.
 Per terminare si stampa il conteggio e l'interprete associato
@@ -85,11 +85,11 @@ La riga di comando crontab, come richiede l’esercizio, effettua il backup dell
 
 Il tuo compito è creare l'infrastruttura di produzione sulla base di queste indicazioni:
 
-Usa AWS come public cloud provider
-Scegli Apache, Nginx o un altro webserver/servizio AWS per pubblicare il sito su internet
-I dati devono essere memorizzati in un database MySQL.
-[opzionale] L'infrastruttura dev'essere sicura, tollerante ai guasti e in grado di adattarsi a variazioni di carico
-[opzionale] Per il provisioning dell'infrastruttura puoi usare lo strumento di IaC che conosci meglio scegliendo tra CloudFormation, Terraform e CDK.
+- Usa AWS come public cloud provider
+- Scegli Apache, Nginx o un altro webserver/servizio AWS per pubblicare il sito su internet
+- I dati devono essere memorizzati in un database MySQL.
+- [opzionale] L'infrastruttura dev'essere sicura, tollerante ai guasti e in grado di adattarsi a variazioni di carico
+- [opzionale] Per il provisioning dell'infrastruttura puoi usare lo strumento di IaC che conosci meglio scegliendo tra CloudFormation, Terraform e CDK.
 
 Descrivi in un file di testo tutte le componenti dell'infrastruttura e il motivo per cui hai scelto di usarle. Crea un diagramma infrastrutturale con i servizi che compongono l'infrastruttura e i collegamenti tra di essi.”
 
