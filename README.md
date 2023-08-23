@@ -47,8 +47,8 @@ Dentro la funzione, `interpreter_count = defaultdict(int)`, viene creato un ogge
 - Nella settima riga viene impostata una condizione che verifica se la prima riga inizia con #!, che è un indicatore di una linea shabang.
 - Nell’ottava riga, se la riga shabang è stata trovata, il conteggio dell'interprete corrispondente viene incrementato di uno all'interno del dizionario interpreter_count.
 
-    `for interpreter, count in interpreter_count.items():
-        print(f"{count} {interpreter}")`
+   ```for interpreter, count in interpreter_count.items():```
+       ``` print(f"{count} {interpreter}")```
 
 Nella prima riga, dopo aver attraversato tutti i file e le directory, il ciclo successivo for scorre attraverso tutte le coppie chiave-valore nel dizionario interpreter_count.
 Per terminare si stampa il conteggio e l'interprete associato
